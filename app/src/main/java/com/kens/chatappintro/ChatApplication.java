@@ -2,6 +2,8 @@ package com.kens.chatappintro;
 
 import android.app.Application;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.parse.GetCallback;
@@ -18,6 +20,9 @@ public class ChatApplication extends Application {
     public static final String APP_ID = "i2iF9hDMMqZ4dHW3Kr53WDvF7rRBJJZpIBgwVYnL";
     public static final String CLIENT_KEY = "HeaqLEtIOxECwWSV4hatDqZCc5G3MQWq8PMmo1lL";
     public static final String SERVER_URL = "https://parseapi.back4app.com";
+
+
+
 
 
 
@@ -53,6 +58,8 @@ public class ChatApplication extends Application {
                 }
             }
         });
+
+
 
 
     }
