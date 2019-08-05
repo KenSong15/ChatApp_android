@@ -1,4 +1,4 @@
-package com.kens.chatappintro;
+package com.kens.chatappintro.Util;
 
 import android.app.Application;
 import android.util.Log;
@@ -37,9 +37,17 @@ public class ChatApplication extends Application {
                 .server(SERVER_URL)
                 .build());
 
+
+
+
+
+
+    }
+
+    public void makeuser1(){
         ParseUser user = new ParseUser();
         user.setUsername("user1");
-        user.setPassword("password1");
+        user.setPassword("123456");
         user.setEmail("user1@test.com");
 
         user.put("phone", "123-456-7890");
@@ -58,10 +66,6 @@ public class ChatApplication extends Application {
                 }
             }
         });
-
-
-
-
     }
 
     public void createObject() {
