@@ -39,6 +39,7 @@ public class ChatAdapter extends ArrayAdapter<Message> {
             final ViewHolder holder = new ViewHolder();
             holder.imageLeft = (ImageView) convertView.findViewById(R.id.ProfileLeft);
             holder.imageRight = (ImageView) convertView.findViewById(R.id.ProfileRight);
+            holder.body = (TextView) convertView.findViewById(R.id.tvBody);
             convertView.setTag(holder);
         }
 
@@ -58,6 +59,7 @@ public class ChatAdapter extends ArrayAdapter<Message> {
 
         final ImageView profileView = isMe ? holder.imageRight : holder.imageLeft;
         Picasso.with(getContext()).load(ProfileGravatar(message.getUserId())).into(profileView);
+        holder.body.setText(message.getBody());
 
         return convertView;
     }

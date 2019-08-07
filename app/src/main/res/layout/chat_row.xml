@@ -19,8 +19,9 @@
         android:layout_marginRight="64dp"/>
 
     <ImageView
-        android:layout_width="-64dp"
+        android:layout_width="64dp"
         android:layout_height="64dp"
+        android:layout_marginLeft="-64dp"
         android:id="@+id/ProfileRight"/>
 
 </LinearLayout>

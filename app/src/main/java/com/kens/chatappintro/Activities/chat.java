@@ -31,7 +31,7 @@ public class chat extends AppCompatActivity {
     private ListView listView;
     private List<com.kens.chatappintro.Model.Message> mMessages;
     private ChatAdapter mAdapter;
-    private Handler handler = new Handler();
+    private Handler handler = new Handler();    //for updating app periodically,but not a good way
 
     private static final int MAX_CHAT_MSG_SHOW = 70;
 
@@ -41,7 +41,17 @@ public class chat extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
 
         getCurrentUser();
+
+        handler.postDelayed(runnable, 100);
     }
+
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            refreshMessages();
+            handler.postDelayed(this, 100);
+        }
+    };
 
     private void getCurrentUser(){
         currentUserId = ParseUser.getCurrentUser().getObjectId();
@@ -69,6 +79,7 @@ public class chat extends AppCompatActivity {
                             receiveMessage();
                         }
                     });
+                    messageEt.setText("");
                 } else {
                     Toast.makeText(getApplicationContext(), "Empty message!", Toast.LENGTH_LONG).show();
                 }

@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.kens.chatappintro.Model.Message;
 import com.parse.GetCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
@@ -37,6 +38,7 @@ public class ChatApplication extends Application {
                 .server(SERVER_URL)
                 .build());
 
+        ParseObject.registerSubclass(Message.class);
 
 
 
